@@ -2,18 +2,15 @@ const mongoose = require('mongoose');
 
 const gantrySchema = new mongoose.Schema({
   gantryID: String,
-  password: String,
-  passwordResetToken: String,
-  passwordResetExpires: Date,
-
-  facebook: String,
-  twitter: String,
-  google: String,
-  github: String,
-  instagram: String,
-  linkedin: String,
-  steam: String,
-  tokens: Array,
+  locationDescription: String,
+  gantryZone: String,
+  zoneID: String,
+  dayType: String,
+  charge: {
+    chargeTimeStart: Number,
+    chargeTimeEnd: Number,
+    chargeAmount: Number
+  },
 
   profile: {
     name: String,
