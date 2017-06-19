@@ -1,9 +1,18 @@
 import mongoose from "mongoose";
 
 const gantrySchema = new mongoose.schema({
-  gantryID: {type: String, unique: true},
+  gantryID: {
+    id: String,
+    required: true,
+    unique: true
+  },
   locationDescription: String,
-  gantryType: {gantryZone: String, zoneID: String},
+  dayType: String,
+  gantryType: {
+    gantryZone: String,
+    zoneID: String
+  }
 });
 
 const Gantry = mongoose.model('Gantry', gantrySchema);
+module.exports = Gantry;

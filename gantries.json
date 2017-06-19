@@ -1,0 +1,937 @@
+{
+  gantryID: {
+    id: '1',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'Bugis-Marina Centre - Victoria Street (after Rochor Road)',
+  dayType: 'Mon - Sat',
+  gantryType: {
+    gantryZone: 'Orchard Cordon and Rest of CBD',
+    zoneID: 'BMC'
+  }
+}{
+  gantryID: {
+    id: '2',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'Bugis-Marina Centre - Nicoll Highway (after Republic Avenue)',
+  dayType: 'Mon - Sat',
+  gantryType: {
+    gantryZone: 'Orchard Cordon and Rest of CBD',
+    zoneID: 'BMC'
+  }
+}{
+  gantryID: {
+    id: '3',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'Shenton Way-Chinatown - Eu Tong Sen Street (after Outram Road)',
+  dayType: 'Mon - Fri',
+  gantryType: {
+    gantryZone: 'Orchard Cordon and Rest of CBD',
+    zoneID: 'CBD'
+  }
+}{
+  gantryID: {
+    id: '4',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'Orchard - Orchard Link (after Orchard Boulevard)',
+  dayType: 'Mon - Sat',
+  gantryType: {
+    gantryZone: 'Orchard Cordon and Rest of CBD',
+    zoneID: 'OC1'
+  }
+}{
+  gantryID: {
+    id: '5',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'Shenton Way-Chinatown - Lim Teck Kim Road (after Cantonment Road)',
+  dayType: 'Mon - Fri',
+  gantryType: {
+    gantryZone: 'Orchard Cordon and Rest of CBD',
+    zoneID: 'CBD'
+  }
+}{
+  gantryID: {
+    id: '6',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'Shenton Way-Chinatown - Anson Road (after Keppel Road)',
+  dayType: 'Mon - Fri',
+  gantryType: {
+    gantryZone: 'Orchard Cordon and Rest of CBD',
+    zoneID: 'CBD'
+  }
+}{
+  gantryID: {
+    id: '7',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'Shenton Way-Chinatown - Tanjong Pagar Road (after Keppel Road)',
+  dayType: 'Mon - Fri',
+  gantryType: {
+    gantryZone: 'Orchard Cordon and Rest of CBD',
+    zoneID: 'CBD'
+  }
+}{
+  gantryID: {
+    id: '9',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'Bugis-Marina Centre - Bencoolen Street (after Rochor Road)',
+  dayType: 'Mon - Sat',
+  gantryType: {
+    gantryZone: 'Orchard Cordon and Rest of CBD',
+    zoneID: 'BMC'
+  }
+}{
+  gantryID: {
+    id: '10',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'Bugis-Marina Centre - Queen Street (after Rochor Road)',
+  dayType: 'Mon - Sat',
+  gantryType: {
+    gantryZone: 'Orchard Cordon and Rest of CBD',
+    zoneID: 'BMC'
+  }
+}{
+  gantryID: {
+    id: '11',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'Bugis-Marina Centre - North Bridge Road (after Rochor Road)',
+  dayType: 'Mon - Sat',
+  gantryType: {
+    gantryZone: 'Orchard Cordon and Rest of CBD',
+    zoneID: 'BMC'
+  }
+}{
+  gantryID: {
+    id: '12',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'Orchard - Oxley Road (after Eber Road)',
+  dayType: 'Mon - Fri',
+  gantryType: {
+    gantryZone: 'Orchard Cordon and Rest of CBD',
+    zoneID: 'OC1'
+  }
+}{
+  gantryID: {
+    id: '13',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'Orchard - Orchard Road (after Scotts Road)',
+  dayType: 'Mon - Sat',
+  gantryType: {
+    gantryZone: 'Orchard Cordon and Rest of CBD',
+    zoneID: 'OC1'
+  }
+}{
+  gantryID: {
+    id: '14',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'Orchard - Orchard Turn (after Orchard Boulevard)',
+  dayType: 'Mon - Sat',
+  gantryType: {
+    gantryZone: 'Orchard Cordon and Rest of CBD',
+    zoneID: 'OC1'
+  }
+}{
+  gantryID: {
+    id: '15',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'Orchard - Killiney Road (after Exeter Road)',
+  dayType: 'Mon - Sat',
+  gantryType: {
+    gantryZone: 'Orchard Cordon and Rest of CBD',
+    zoneID: 'OC1'
+  }
+}{
+  gantryID: {
+    id: '16',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'Bugis-Marina Centre - Beach Road (after Rochor Road)',
+  dayType: 'Mon - Sat',
+  gantryType: {
+    gantryZone: 'Orchard Cordon and Rest of CBD',
+    zoneID: 'BMC'
+  }
+}{
+  gantryID: {
+    id: '17',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'Bugis-Marina Centre - Temasek Boulevard (after Rochor Road)',
+  dayType: 'Mon - Sat',
+  gantryType: {
+    gantryZone: 'Orchard Cordon and Rest of CBD',
+    zoneID: 'BMC'
+  }
+}{
+  gantryID: {
+    id: '18',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'Bugis-Marina Centre - Republic Boulevard (after junction of Republic Avenue and Republic Boulevard)',
+  dayType: 'Mon - Sat',
+  gantryType: {
+    gantryZone: 'Orchard Cordon and Rest of CBD',
+    zoneID: 'BMC'
+  }
+}{
+  gantryID: {
+    id: '19',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'Shenton Way-Chinatown - Havelock Road (after Clemenceau Avenue)',
+  dayType: 'Mon - Fri',
+  gantryType: {
+    gantryZone: 'Orchard Cordon and Rest of CBD',
+    zoneID: 'CBD'
+  }
+}{
+  gantryID: {
+    id: '20',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'Shenton Way-Chinatown - Havelock Road (from CTE Exit)',
+  dayType: 'Mon - Fri',
+  gantryType: {
+    gantryZone: 'Orchard Cordon and Rest of CBD',
+    zoneID: 'CBD'
+  }
+}{
+  gantryID: {
+    id: '21',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'Orchard - Buyong Road (after Kramat Lane)',
+  dayType: 'Mon - Sat',
+  gantryType: {
+    gantryZone: 'Orchard Cordon and Rest of CBD',
+    zoneID: 'OC1'
+  }
+}{
+  gantryID: {
+    id: '22',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'Orchard - Kramat Road (after Buyong Road)',
+  dayType: 'Mon - Sat',
+  gantryType: {
+    gantryZone: 'Orchard Cordon and Rest of CBD',
+    zoneID: 'OC1'
+  }
+}{
+  gantryID: {
+    id: '23',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'Bugis-Marina Centre - River Valley Road (after Clemenceau Avenue)',
+  dayType: 'Mon - Sat',
+  gantryType: {
+    gantryZone: 'Orchard Cordon and Rest of CBD',
+    zoneID: 'BMC'
+  }
+}{
+  gantryID: {
+    id: '24',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'Shenton Way-Chinatown - Merchant Road (after Clemenceau Avenue)',
+  dayType: 'Mon - Fri',
+  gantryType: {
+    gantryZone: 'Orchard Cordon and Rest of CBD',
+    zoneID: 'CBD'
+  }
+}{
+  gantryID: {
+    id: '25',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'Shenton Way-Chinatown - Anson Road (after Keppel Road)',
+  dayType: 'Mon - Fri',
+  gantryType: {
+    gantryZone: 'Orchard Cordon and Rest of CBD',
+    zoneID: 'CBD'
+  }
+}{
+  gantryID: {
+    id: '26',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'Orchard - Clemenceau Avenue (before Penang Road)',
+  dayType: 'Mon - Sat',
+  gantryType: {
+    gantryZone: 'Orchard Cordon and Rest of CBD',
+    zoneID: 'OC1'
+  }
+}{
+  gantryID: {
+    id: '27',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'Orchard - Cairnhill Road (after Cairnhill Circle)',
+  dayType: 'Mon - Sat',
+  gantryType: {
+    gantryZone: 'Orchard Cordon and Rest of CBD',
+    zoneID: 'OC1'
+  }
+}{
+  gantryID: {
+    id: '28',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'Shenton Way-Chinatown - Central Boulevard (after Marina Gardens Drive)',
+  dayType: 'Mon - Fri',
+  gantryType: {
+    gantryZone: 'Orchard Cordon and Rest of CBD',
+    zoneID: 'CBD'
+  }
+}{
+  gantryID: {
+    id: '29',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'Shenton Way-Chinatown - Slip Road from Westbound MCE towards Maxwell Road',
+  dayType: 'Mon - Fri',
+  gantryType: {
+    gantryZone: 'Orchard Cordon and Rest of CBD',
+    zoneID: 'CBD'
+  }
+}{
+  gantryID: {
+    id: '30',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'ECP (City)',
+  dayType: 'Mon - Fri',
+  gantryType: {
+    gantryZone: 'Expressways',
+    zoneID: 'EC1'
+  }
+}{
+  gantryID: {
+    id: '31',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'CTE after Braddell Road, Serangoon Road and Balestier slip road',
+  dayType: 'Mon - Fri',
+  gantryType: {
+    gantryZone: 'Expressways',
+    zoneID: 'CT1'
+  }
+}{
+  gantryID: {
+    id: '32',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'PIE after Kallang Bahru exit, PIE Slip Road into Bendemeer Rd',
+  dayType: 'Mon - Fri',
+  gantryType: {
+    gantryZone: 'Expressways',
+    zoneID: 'PE1'
+  }
+}{
+  gantryID: {
+    id: '33',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'CTE after Braddell Road, Serangoon Road and Balestier slip road',
+  dayType: 'Mon - Fri',
+  gantryType: {
+    gantryZone: 'Expressways',
+    zoneID: 'CT1'
+  }
+}{
+  gantryID: {
+    id: '34',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'CTE after Braddell Road, Serangoon Road and Balestier slip road',
+  dayType: 'Mon - Fri',
+  gantryType: {
+    gantryZone: 'Expressways',
+    zoneID: 'CT1'
+  }
+}{
+  gantryID: {
+    id: '35',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'CTE between Ang Mo Kio Ave 1 and Braddell Road',
+  dayType: 'Mon - Fri',
+  gantryType: {
+    gantryZone: 'Expressways',
+    zoneID: 'CT4'
+  }
+}{
+  gantryID: {
+    id: '36',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'AYE between Portsdown Road and Alexandra Road',
+  dayType: 'Mon - Fri',
+  gantryType: {
+    gantryZone: 'Expressways',
+    zoneID: 'AY1'
+  }
+}{
+  gantryID: {
+    id: '37',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'PIE eastbound after Adam Road and Mount Pleasant slip road into the eastbound PIE',
+  dayType: 'Mon - Fri',
+  gantryType: {
+    gantryZone: 'Expressways',
+    zoneID: 'PE2'
+  }
+}{
+  gantryID: {
+    id: '38',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'PIE eastbound after Adam Road and Mount Pleasant slip road into the eastbound PIE',
+  dayType: 'Mon - Fri',
+  gantryType: {
+    gantryZone: 'Expressways',
+    zoneID: 'PE2'
+  }
+}{
+  gantryID: {
+    id: '39',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'Thomson Road southbound after Toa Payoh Rise',
+  dayType: 'Mon - Fri',
+  gantryType: {
+    gantryZone: 'Arterial Roads',
+    zoneID: 'THM'
+  }
+}{
+  gantryID: {
+    id: '40',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'Bendemeer Road southbound after Woodsville Interchange, Woodsville Tunnel',
+  dayType: 'Mon - Fri',
+  gantryType: {
+    gantryZone: 'Arterial Roads',
+    zoneID: 'OR1'
+  }
+}{
+  gantryID: {
+    id: '41',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'Tuasbound AYE - After North Buona Vista',
+  dayType: 'Mon - Fri',
+  gantryType: {
+    gantryZone: 'Expressways',
+    zoneID: 'AY3'
+  }
+}{
+  gantryID: {
+    id: '42',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'PIE slip road into CTE',
+  dayType: 'Mon - Fri',
+  gantryType: {
+    gantryZone: 'Expressways',
+    zoneID: 'PE3'
+  }
+}{
+  gantryID: {
+    id: '43',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'Dunearn Road eastbound after Dunkirk Avenue',
+  dayType: 'Mon - Fri',
+  gantryType: {
+    gantryZone: 'Arterial Roads',
+    zoneID: 'DZ1'
+  }
+}{
+  gantryID: {
+    id: '44',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'Dunearn Road eastbound after Dunkirk Avenue',
+  dayType: 'Mon - Fri',
+  gantryType: {
+    gantryZone: 'Arterial Roads',
+    zoneID: 'DZ1'
+  }
+}{
+  gantryID: {
+    id: '45',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'PIE after Kallang Bahru exit, PIE Slip Road into Bendemeer Rd',
+  dayType: 'Mon - Fri',
+  gantryType: {
+    gantryZone: 'Expressways',
+    zoneID: 'PE1'
+  }
+}{
+  gantryID: {
+    id: '46',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'CTE northbound between PIE and Braddell Road, PIE to CTE northbound before Braddell Road',
+  dayType: 'Mon - Fri',
+  gantryType: {
+    gantryZone: 'Expressways',
+    zoneID: 'CT5'
+  }
+}{
+  gantryID: {
+    id: '47',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'YMCA Gantry and Fort Canning Tunnel Gantry',
+  dayType: 'Mon - Fri',
+  gantryType: {
+    gantryZone: 'Orchard Cordon and Rest of CBD',
+    zoneID: 'OC2'
+  }
+}{
+  gantryID: {
+    id: '48',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'Handy Road Gantry',
+  dayType: 'Mon - Fri',
+  gantryType: {
+    gantryZone: 'Orchard Cordon and Rest of CBD',
+    zoneID: 'OC3'
+  }
+}{
+  gantryID: {
+    id: '49',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'YMCA Gantry and Fort Canning Tunnel Gantry',
+  dayType: 'Mon - Fri',
+  gantryType: {
+    gantryZone: 'Orchard Cordon and Rest of CBD',
+    zoneID: 'OC2'
+  }
+}{
+  gantryID: {
+    id: '50',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'KPE southbound after Defu Flyover',
+  dayType: 'Mon - Fri',
+  gantryType: {
+    gantryZone: 'Expressways',
+    zoneID: 'KPE'
+  }
+}{
+  gantryID: {
+    id: '51',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'CTE northbound between Jalan Bahagia and PIE',
+  dayType: 'Mon - Fri',
+  gantryType: {
+    gantryZone: 'Expressways',
+    zoneID: 'CT2'
+  }
+}{
+  gantryID: {
+    id: '52',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'Citybound AYE Set of 3 gantries - After Jurong Town Hall, Clementi Avenue 6 into AYE, Clementi Avenue 2 into AYE',
+  dayType: 'Mon - Fri',
+  gantryType: {
+    gantryZone: 'Expressways',
+    zoneID: 'AY2'
+  }
+}{
+  gantryID: {
+    id: '53',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'Citybound AYE Set of 3 gantries - After Jurong Town Hall, Clementi Avenue 6 into AYE, Clementi Avenue 2 into AYE',
+  dayType: 'Mon - Fri',
+  gantryType: {
+    gantryZone: 'Expressways',
+    zoneID: 'AY2'
+  }
+}{
+  gantryID: {
+    id: '54',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'BKE between Dairy Farm Road and PIE',
+  dayType: 'Mon - Fri',
+  gantryType: {
+    gantryZone: 'Expressways',
+    zoneID: 'BKE'
+  }
+}{
+  gantryID: {
+    id: '55',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'Upper Bt Timah Road southbound after Hume Ave',
+  dayType: 'Mon - Fri',
+  gantryType: {
+    gantryZone: 'Arterial Roads',
+    zoneID: 'UBT'
+  }
+}{
+  gantryID: {
+    id: '56',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'Lorong 6 Toa Payoh from Braddell Road',
+  dayType: 'Mon - Fri',
+  gantryType: {
+    gantryZone: 'Arterial Roads',
+    zoneID: 'TPZ'
+  }
+}{
+  gantryID: {
+    id: '57',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'Kallang Bahru from PIE',
+  dayType: 'Mon - Fri',
+  gantryType: {
+    gantryZone: 'Expressways',
+    zoneID: 'KBZ'
+  }
+}{
+  gantryID: {
+    id: '58',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'Geylang Bahru westbound after Geylang Bahru Terrace',
+  dayType: 'Mon - Fri',
+  gantryType: {
+    gantryZone: 'Arterial Roads',
+    zoneID: 'GBZ'
+  }
+}{
+  gantryID: {
+    id: '59',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'Upper Boon Keng Road near Lorong 1 Geylang',
+  dayType: 'Mon - Fri',
+  gantryType: {
+    gantryZone: 'Arterial Roads',
+    zoneID: 'BKZ'
+  }
+}{
+  gantryID: {
+    id: '60',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'Eu Tong Sen St at Central, northbound Fullerton Road and northbound Bayfront Ave Gantries',
+  dayType: 'Mon - Fri',
+  gantryType: {
+    gantryZone: 'Orchard Cordon and Rest of CBD',
+    zoneID: 'SR2'
+  }
+}{
+  gantryID: {
+    id: '61',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'New Bridge Road, South Bridge Road, southbound Fullerton Road and southbound Bayfront Ave Gantries',
+  dayType: 'Mon - Fri',
+  gantryType: {
+    gantryZone: 'Orchard Cordon and Rest of CBD',
+    zoneID: 'SR1'
+  }
+}{
+  gantryID: {
+    id: '62',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'New Bridge Road, South Bridge Road, southbound Fullerton Road and southbound Bayfront Ave Gantries',
+  dayType: 'Mon - Fri',
+  gantryType: {
+    gantryZone: 'Orchard Cordon and Rest of CBD',
+    zoneID: 'SR1'
+  }
+}{
+  gantryID: {
+    id: '63',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'Eu Tong Sen St at Central, northbound Fullerton Road and northbound Bayfront Ave Gantries',
+  dayType: 'Mon - Fri',
+  gantryType: {
+    gantryZone: 'Orchard Cordon and Rest of CBD',
+    zoneID: 'SR2'
+  }
+}{
+  gantryID: {
+    id: '64',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'New Bridge Road, South Bridge Road, southbound Fullerton Road and southbound Bayfront Ave Gantries',
+  dayType: 'Mon - Fri',
+  gantryType: {
+    gantryZone: 'Orchard Cordon and Rest of CBD',
+    zoneID: 'SR1'
+  }
+}{
+  gantryID: {
+    id: '65',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'PIE westbound before Eunos Link',
+  dayType: 'Mon - Fri',
+  gantryType: {
+    gantryZone: 'Expressways',
+    zoneID: 'PE4'
+  }
+}{
+  gantryID: {
+    id: '66',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'Eu Tong Sen St at Central, northbound Fullerton Road and northbound Bayfront Ave Gantries',
+  dayType: 'Mon - Fri',
+  gantryType: {
+    gantryZone: 'Orchard Cordon and Rest of CBD',
+    zoneID: 'SR2'
+  }
+}{
+  gantryID: {
+    id: '67',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'CTE northbound between PIE and Braddell Road, PIE to CTE northbound before Braddell Road',
+  dayType: 'Mon - Fri',
+  gantryType: {
+    gantryZone: 'Expressways',
+    zoneID: 'CT5'
+  }
+}{
+  gantryID: {
+    id: '68',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'CTE slip road to PIE (Changi) / Serangoon Road',
+  dayType: 'Mon - Fri',
+  gantryType: {
+    gantryZone: 'Expressways',
+    zoneID: 'KP1'
+  }
+}{
+  gantryID: {
+    id: '69',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'New Bridge Road, South Bridge Road, southbound Fullerton Road and southbound Bayfront Ave Gantries',
+  dayType: 'Mon - Fri',
+  gantryType: {
+    gantryZone: 'Orchard Cordon and Rest of CBD',
+    zoneID: 'SR1'
+  }
+}{
+  gantryID: {
+    id: '70',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'Geylang Road westbound before Kallang River',
+  dayType: 'Mon - Fri',
+  gantryType: {
+    gantryZone: 'Arterial Roads',
+    zoneID: 'KAL'
+  }
+}{
+  gantryID: {
+    id: '71',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'Bendemeer Road southbound after Woodsville Interchange, Woodsville Tunnel',
+  dayType: 'Mon - Fri',
+  gantryType: {
+    gantryZone: 'Arterial Roads',
+    zoneID: 'KAL'
+  }
+}{
+  gantryID: {
+    id: '72',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'Shenton Way-Chinatown - Sheares Ave towards Marina Boulevard (after Sheares Bridge)',
+  dayType: 'Mon - Fri',
+  gantryType: {
+    gantryZone: 'Orchard Cordon and Rest of CBD',
+    zoneID: '-'
+  }
+}{
+  gantryID: {
+    id: '73',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'ECP Eastbound before KPE',
+  dayType: 'Mon - Fri',
+  gantryType: {
+    gantryZone: 'Expressways',
+    zoneID: 'ECP'
+  }
+}{
+  gantryID: {
+    id: '74',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'Citybound AYE Set of 3 gantries - After Jurong Town Hall, Clementi Avenue 6 into AYE, Clementi Avenue 2 into AYE',
+  dayType: 'Mon - Fri',
+  gantryType: {
+    gantryZone: 'Expressways',
+    zoneID: 'AY2'
+  }
+}{
+  gantryID: {
+    id: '80',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'KPE slip road into citybound ECP',
+  dayType: 'Mon - Fri',
+  gantryType: {
+    gantryZone: 'Expressways',
+    zoneID: 'KP2'
+  }
+}{
+  gantryID: {
+    id: '90',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'MCE Westbound before exit to Central Boulevard and before exit to Maxwell Rd',
+  dayType: 'Mon - Fri',
+  gantryType: {
+    gantryZone: 'Expressways',
+    zoneID: 'MC1'
+  }
+}{
+  gantryID: {
+    id: '91',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'MCE Westbound before exit to Central Boulevard and before exit to Maxwell Rd',
+  dayType: 'Mon - Fri',
+  gantryType: {
+    gantryZone: 'Expressways',
+    zoneID: 'MC1'
+  }
+}{
+  gantryID: {
+    id: '92',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'MCE eastbound after entry from Maxwell Road, on slip road after Marina Boulevard',
+  dayType: 'Mon - Fri',
+  gantryType: {
+    gantryZone: 'Expressways',
+    zoneID: 'MC2'
+  }
+}{
+  gantryID: {
+    id: '93',
+    required: true,
+    unique: true
+  },
+  locationDescription: 'MCE eastbound after entry from Maxwell Road, on slip road after Marina Boulevard',
+  dayType: 'Mon - Fri',
+  gantryType: {
+    gantryZone: 'Expressways',
+    zoneID: 'MC2'
+  }
+}

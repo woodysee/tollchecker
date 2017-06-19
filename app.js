@@ -3,6 +3,7 @@ import cookieParser from 'cookie-parser';
 import Debug from 'debug';
 import express from 'express';
 import logger from 'morgan';
+import mongoose from 'mongoose';
 import passport from 'passport'
 // import favicon from 'serve-favicon';
 import path from 'path';
@@ -11,6 +12,13 @@ import index from './routes/index';
 
 const app = express();
 const debug = Debug('tollchecker:app');
+
+// connecting to mongoDB
+mongoose.connect('mongodb://localhost/tollchecker');
+
+// Creation of models
+import Gantry from './models/Gantry';
+import Charges from './models/Charges';
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
