@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 const gantrySchema = new mongoose.Schema({
   gantryID: String,
   locationDescription: String,
-  dayType: String,
+  daysCharged: String,
   gantryType: {
     gantryZone: String,
     zoneID: String
