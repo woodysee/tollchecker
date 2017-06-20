@@ -11,7 +11,7 @@ import lessMiddleware from 'less-middleware';
 import index from './routes/index';
 
 const app = express();
-const debug = Debug('tollchecker:app');
+//const debug = Debug('tollchecker:app');
 
 // connecting to mongoDB
 mongoose.connect('mongodb://localhost/tollchecker');
@@ -26,7 +26,7 @@ app.set('view engine', 'pug');
 
 // uncomment after placing your favicon in /public
 // app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-app.use(logger('dev'));
+//app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: false
@@ -58,7 +58,8 @@ app.use((err, req, res, next) => {
 
 // Handle uncaughtException
 process.on('uncaughtException', (err) => {
-  debug('Caught exception: %j', err);
+  console.log(err);
+  //debug('Caught exception: %j', err);
   process.exit(1);
 });
 
