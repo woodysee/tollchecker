@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 const chargesSchema = new mongoose.Schema({
   vehicleType: String,
   dayType: String,
-  gantryIDs: [], /*gantrySchemas*/
+  gantryIDs: [],
   startHour: Number,
   startMins: Number,
   endHour: Number,
