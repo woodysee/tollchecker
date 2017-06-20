@@ -13,8 +13,16 @@ import index from './routes/index';
 const app = express();
 //const debug = Debug('tollchecker:app');
 
-// connecting to mongoDB
-mongoose.connect('mongodb://localhost/tollchecker');
+/**
+ * Connect to MongoDB and MongoLabs. No .env file used in mongoose.connect.
+ */
+mongoose.Promise = global.Promise;
+mongoose.connect("mongodb://localhost/tollchecker" || "mongodb://woodennature: aEG-gRT-E7Z-Q4a@ds123312.mlab.com:23312/woodys-tollchecker");
+mongoose.connection.on('error', (err) => {
+  console.error(err);
+  console.log('%s MongoDB connection error. Please make sure MongoDB is running.', chalk.red('✗'));
+  process.exit();
+});
 
 // Creation of models
 import Gantry from './models/gantry';
