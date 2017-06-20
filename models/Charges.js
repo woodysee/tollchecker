@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const chargesSchema = new mongoose.schema({
+const chargesSchema = new mongoose.Schema({
   vehicleType: String,
   dayType: String,
   gantryIDs: [], /*gantrySchemas*/

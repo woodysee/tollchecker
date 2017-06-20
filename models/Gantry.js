@@ -1,11 +1,7 @@
 import mongoose from "mongoose";
 
-const gantrySchema = new mongoose.schema({
-  gantryID: {
-    id: String,
-    required: true,
-    unique: true
-  },
+const gantrySchema = new mongoose.Schema({
+  gantryID: String,
   locationDescription: String,
   dayType: String,
   gantryType: {
@@ -15,4 +11,5 @@ const gantrySchema = new mongoose.schema({
 });
 
 const Gantry = mongoose.model('Gantry', gantrySchema);
+
 module.exports = Gantry;

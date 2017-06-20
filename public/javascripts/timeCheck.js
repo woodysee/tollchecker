@@ -8,6 +8,19 @@ $( document ).ready(function() {
 
 // Return the name of the weekday today
 
+//Reference to all gantry objects
+var highlightedBlock = new Object{
+  vehicleType: "Passenger Cars/Light Goods Vehicles/Taxis",
+  dayType: "Weekdays",
+  gantryIDs: [],
+  startHour: 7,
+  startMins: 30,
+  endHour: 7,
+  endMins: 54,
+  chargeAmount: 3.50
+};
+
+
 function isWeekday() {
   var d = new Date();
   var dayOfWeek = new Array(7);
@@ -35,24 +48,6 @@ function MinsIs() {
   var m = d.getMinutes();
   return m;
 };
-
-//Reference to all gantry objects
-var highlightedBlock = new Object{
-  vehicleType: "Passenger Cars/Light Goods Vehicles/Taxis",
-  dayType: "Weekdays",
-  gantryIDs: [],
-  startHour: 7,
-  startMins: 30,
-  endHour: 7,
-  endMins: 54,
-  chargeAmount: 3.50
-};
-
-var startHour = 7;
-var startMins = 30;
-var endHour = 7;
-var endMins = 54;
-var chargeDay = "Weekdays";
 
 function timeMatch(currentHour,currentMins,startHour,startMins,endHour,endMins) {
   if (currentHour >= startHour && startMins >= startMins && currentHour <= startHour && currentMins <= startMins) {

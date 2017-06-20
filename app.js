@@ -17,8 +17,8 @@ const debug = Debug('tollchecker:app');
 mongoose.connect('mongodb://localhost/tollchecker');
 
 // Creation of models
-import Gantry from './models/Gantry';
-import Charges from './models/Charges';
+import Gantry from './models/gantry';
+import Charges from './models/charges';
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
