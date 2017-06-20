@@ -1,6 +1,10 @@
+/* Module dependencies.*/
 import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 import Debug from 'debug';
+/*Taken from ga-hackathon-starter. Below. */
+import dotenv from 'dotenv';
+/*Taken from ga-hackathon-starter. Above. */
 import express from 'express';
 import logger from 'morgan';
 import mongoose from 'mongoose';
@@ -10,21 +14,27 @@ import path from 'path';
 import lessMiddleware from 'less-middleware';
 import index from './routes/index';
 
+/*Load environment variables from .env file, where API keys and passwords are configured. Taken from ga-hackathon-starter.*/
+dotenv.load({ path: '.env.example' });
+/**
+ * Taken from ga-hackathon-starter.
+ */
+
 const app = express();
 //const debug = Debug('tollchecker:app');
 
 /**
- * Connect to MongoDB and MongoLabs. No .env file used in mongoose.connect.
+ * Connect to MongoDB. Taken from ga-hackathon-starter.
  */
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://localhost/tollchecker" || "mongodb://woodennature: aEG-gRT-E7Z-Q4a@ds123312.mlab.com:23312/woodys-tollchecker");
+mongoose.connect(process.env.MONGODB_URI || process.env.MONGOLAB_URI);
 mongoose.connection.on('error', (err) => {
   console.error(err);
   console.log('%s MongoDB connection error. Please make sure MongoDB is running.', chalk.red('✗'));
   process.exit();
 });
 
-// Creation of models
+// Creation of models for ERP gantries
 import Gantry from './models/gantry';
 import Charges from './models/charges';
 
