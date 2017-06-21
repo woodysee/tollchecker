@@ -1,25 +1,36 @@
 /* Module dependencies.*/
+console.log('Starting app.js');
+/*Load environment variables from .env file, where API keys and passwords are configured. Taken from ga-hackathon-starter.*/
+import dotenv from 'dotenv';
+dotenv.load({ path: '.env.example' });
+console.log('Loaded app.js > dotenv > .env.example');
+
+import express from 'express';
 import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 import Debug from 'debug';
-/*Taken from ga-hackathon-starter. Below. */
-import dotenv from 'dotenv';
-/*Taken from ga-hackathon-starter. Above. */
-import express from 'express';
 import logger from 'morgan';
+import lusca from 'lusca';
 import mongoose from 'mongoose';
 import passport from 'passport'
 // import favicon from 'serve-favicon';
 import path from 'path';
 import lessMiddleware from 'less-middleware';
+
 import index from './routes/index';
-
-/*Load environment variables from .env file, where API keys and passwords are configured. Taken from ga-hackathon-starter.*/
-dotenv.load({ path: '.env.example' });
 /**
- * Taken from ga-hackathon-starter.
+ * Controllers (route handlers).
  */
+import homeController from './controllers/home';
+import userController from './controllers/user';
+import apiController from './controllers/api';
 
+/**
+ * API keys and Passport configuration.
+ */
+import passportConfig from './config/passport-config';
+
+// Setting up the app
 const app = express();
 //const debug = Debug('tollchecker:app');
 
@@ -37,13 +48,17 @@ mongoose.connection.on('error', (err) => {
 // Creation of models for ERP gantries
 import Gantry from './models/gantry';
 import Charges from './models/charges';
+import User from './models/userAccount';
 
-// view engine setup
+//Connect to Google Maps Direction Service & Roads libraries
+var googleMapsClient = require('@google/maps').createClient({
+  key: process.env.GOOGLE_MAPS_SERVER_API_KEY
+});
+
+// view engine setup (Pug/Jade html preprocessor)
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
-// uncomment after placing your favicon in /public
-// app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 //app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -54,7 +69,38 @@ app.use(cookieParser());
 app.use(lessMiddleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 
+//Express mounting of primary routes, i.e. ([path,] callback [, callback...])
 app.use('/', index);
+app.get('/login', userController.getLogin);
+app.post('/login', userController.postLogin);
+app.get('/logout', userController.logout);
+app.get('/signup', userController.getSignup);
+app.post('/signup', userController.postSignup);
+app.get('/account', passportConfig.isAuthenticated, userController.getAccount);
+app.post('/account/profile', passportConfig.isAuthenticated, userController.postUpdateProfile);
+app.post('/account/password', passportConfig.isAuthenticated, userController.postUpdatePassword);
+app.post('/account/delete', passportConfig.isAuthenticated, userController.postDeleteAccount);
+app.get('/account/unlink/:provider', passportConfig.isAuthenticated, userController.getOauthUnlink);
+
+/**
+ * Sahat's Hackathon Starter Pack - API examples routes.
+ */
+app.get('/api', apiController.getApi);
+app.get('/api/facebook', passportConfig.isAuthenticated, passportConfig.isAuthorized, apiController.getFacebook);
+app.get('/api/google-maps', apiController.getGoogleMaps);
+
+/**
+ * OAuth authentication routes. (Sign in)
+ */
+app.get('/auth/facebook', passport.authenticate('facebook', { scope: ['email', 'public_profile'] }));
+app.get('/auth/facebook/callback', passport.authenticate('facebook', { failureRedirect: '/login' }), (req, res) => {
+ res.redirect(req.session.returnTo || '/');
+});
+app.get('/auth/google', passport.authenticate('google', { scope: 'profile email' }));
+app.get('/auth/google/callback', passport.authenticate('google', { failureRedirect: '/login' }), (req, res) => {
+ res.redirect(req.session.returnTo || '/');
+});
+
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
@@ -80,5 +126,7 @@ process.on('uncaughtException', (err) => {
   //debug('Caught exception: %j', err);
   process.exit(1);
 });
+
+console.log('Loaded app.js');
 
 export default app;

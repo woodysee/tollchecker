@@ -23,17 +23,21 @@ html
     script.
       var map;
       function initMap() {
-      map = new google.maps.Map(document.getElementById('map'), {
-      center: {lat: -34.397, lng: 150.644},
-      zoom: 8
+        map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: 1.297154, lng: 103.857917},
+        zoom: 15
       });
       }
       
     // Google Maps simple plugin
     script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCCzDCaQwM86iVgsHpKM3BHjKmMtZxNB4s&callback=initMap', async='', defer='')
+    // Google Maps Roads plugins
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js')
+    script(src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js')
     // jQuery (necessary for Bootstrap's JavaScript plugins)
     script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js')
     // Include all compiled plugins (below), or include individual files as needed
     script(src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/js/bootstrap.min.js')
     // All local scripts
     script(src='/javascripts/timeCheck.js')
+    script(src='/javascripts/map.js')
