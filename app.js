@@ -38,8 +38,6 @@ mongoose.connection.on('error', (err) => {
 import Gantry from './models/gantry';
 import Charges from './models/charges';
 
-
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
