@@ -157,6 +157,7 @@ passport.use(new GoogleStrategy({
     UserAccount.findOne({ google: profile.id }, (err, existingUser) => {
       if (err) { return done(err); }
       if (existingUser) {
+        console.log(existingUser)
         return done(null, existingUser);
       }
       UserAccount.findOne({ email: profile.emails[0].value }, (err, existingEmailUser) => {
@@ -166,8 +167,10 @@ passport.use(new GoogleStrategy({
           done(err);
         } else {
           const user = new UserAccount();
+          console.log(user)
           user.email = profile.emails[0].value;
           user.google = profile.id;
+          user.tokens = []; //This is needed to store tokens
           user.tokens.push({ kind: 'google', accessToken });
           user.profile.name = profile.displayName;
           user.profile.gender = profile._json.gender;

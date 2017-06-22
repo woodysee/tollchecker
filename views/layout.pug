@@ -23,26 +23,32 @@ html
     
     include partials/footer
     
-    script.
-      var map;
-      function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: 1.297154, lng: 103.857917},
-        zoom: 15
-      });
-      }
-    
 
-    // Google Maps simple plugin
-    script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCCzDCaQwM86iVgsHpKM3BHjKmMtZxNB4s&callback=initMap', async='', defer='')
-    // jQuery (necessary for Bootstrap's JavaScript plugins)
+    //- script.
+    //-   var map;
+    //-   function initMap() {
+    //-     map = new google.maps.Map(document.getElementById('map'), {
+    //-     center: {lat: 1.297154, lng: 103.857917},
+    //-     zoom: 15
+    //-   });
+    //-   }
+    //- 
+    
+    //- jQuery (necessary for Bootstrap's JavaScript plugins)
     script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js')
-    // Include all compiled plugins (below), or include individual files as needed
+    //- Include all compiled plugins (below), or include individual files as needed
     script(src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/js/bootstrap.min.js')
-    // Hackathon local plugins
+
+    //- init map
+    script(src='/javascripts/map.js')
+    //- Google Maps simple plugin
+    script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCCzDCaQwM86iVgsHpKM3BHjKmMtZxNB4s', async='', defer='')
+
+
+    //- Hackathon local plugins
     //- script(src='/javascripts/lib/jquery-3.1.1.min.js')
     //- script(src='/javascripts/lib/bootstrap.min.js')
-    script(src='/javascripts/main.js')
-    // All local scripts
+    //- script(src='/javascripts/main.js')
+    //- All local scripts
     script(src='/javascripts/timeCheck.js')
-    script(src='/javascripts/map.js')
+  

@@ -53,6 +53,7 @@ mongoose.connection.on('error', (err) => {
 import Gantry from './models/gantry';
 import Charges from './models/charges';
 import User from './models/userAccount';
+import gantryRoute from './routes/gantry'
 
 //Connect to Google Maps Direction Service & Roads libraries
 var googleMapsClient = require('@google/maps').createClient({
@@ -65,7 +66,6 @@ app.set('view engine', 'pug');
 
 //app.use(logger('dev'));
 
-
 app.use(cookieParser());
 app.use(lessMiddleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
@@ -75,6 +75,7 @@ app.use(bodyParser.urlencoded({
   extended: false
 }));
 
+//Store session
 app.use(expressValidator());
 app.use(session({
   resave: true,
@@ -90,13 +91,15 @@ app.use(passport.initialize())
 app.use(passport.session())
 app.use(flash())
 
+//allow log in / log out of users
 app.use((req, res, next) => {
   res.locals.user = req.user
   next()
 })
 
 //Express mounting of primary routes, i.e. ([path,] callback [, callback...])
-app.use('/', index);
+// app.use('/', index);
+app.use('/', gantryRoute)
 app.get('/login', userController.getLogin);
 app.post('/login', userController.postLogin);
 app.get('/logout', userController.logout);
