@@ -53,7 +53,9 @@ mongoose.connection.on('error', (err) => {
 import Gantry from './models/gantry';
 import Charges from './models/charges';
 import User from './models/userAccount';
-import gantryRoute from './routes/gantry'
+
+import gantryRoute from './routes/gantry';
+import chargesRoute from './routes/charges';
 
 //Connect to Google Maps Direction Service & Roads libraries
 var googleMapsClient = require('@google/maps').createClient({
@@ -99,7 +101,8 @@ app.use((req, res, next) => {
 
 //Express mounting of primary routes, i.e. ([path,] callback [, callback...])
 // app.use('/', index);
-app.use('/', gantryRoute)
+app.use('/', gantryRoute);
+app.use('/', chargesRoute);
 app.get('/login', userController.getLogin);
 app.post('/login', userController.postLogin);
 app.get('/logout', userController.logout);

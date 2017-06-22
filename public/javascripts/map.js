@@ -13,6 +13,7 @@
 
 // Global variables
 var gantries
+var charges
 
 // InitMap function
 function initMap() {
@@ -35,8 +36,6 @@ function initMap() {
       markers.push(gantryItem)
     }
 
-
-
     // Info Window Content
     var infoWindowContent = [];
     console.log('before for loop, gantries', gantries)
@@ -45,7 +44,7 @@ function initMap() {
       infoWindowContent.push(['<div class="info_content">' +
         '<h3>' + gantries[i].gantryID + '</h3>' +
         '<h4>' + gantries[i].locationDescription + '</h4>' +
-        '<p>From ' + 'charges.startHour[c]' + ' to ' + 'charges.endHour[c]' +
+        '<h5>From ' + 'charges.startHour[c]' + ' to ' + 'charges.endHour[c]' + '</h5><p>' +
         'Toll: ' + 'charges.chargeAmount[c]' + '</p></div>']
       );
     };
@@ -86,13 +85,27 @@ function initMap() {
 $(() => {
   $.ajax({
     method: 'GET',
+    url: '/charges',
+    success: (result) => {
+      charges = result
+      console.log('ALL CHARGES ARE HERE:', charges)
+    }
+  }).done(() => {
+      console.log('ajax charges done')
+    }
+  )
+})
+
+$(() => {
+  $.ajax({
+    method: 'GET',
     url: '/gantry',
     success: (result) => {
       gantries = result
-      //console.log('success', gantries)
+      //console.log('ALL GANTRIES ARE HERE:', gantries)
     }
   }).done(() => {
-      console.log('ajax done')
+      console.log('ajax gantries done')
       initMap()
     }
   )

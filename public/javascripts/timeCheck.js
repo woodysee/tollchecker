@@ -12,7 +12,7 @@ $( document ).ready(function() {
 var currentBlock = {
   vehicleType: "Passenger Cars/Light Goods Vehicles/Taxis",
   dayType: "Weekdays",
-  gantryIDs: [],
+  gantryIDs: ["2"],
   startHour: 7,
   startMins: 30,
   endHour: 7,

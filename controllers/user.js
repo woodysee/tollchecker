@@ -302,14 +302,14 @@ exports.getReset = (req, res, next) => {
  * GET /forgot
  * Forgot Password page.
  */
-exports.getForgot = (req, res) => {
-  if (req.isAuthenticated()) {
-    return res.redirect('/');
-  }
-  res.render('account/forgot', {
-    title: 'Forgot Password'
-  });
-};
+// exports.getForgot = (req, res) => {
+//   if (req.isAuthenticated()) {
+//     return res.redirect('/');
+//   }
+//   res.render('account/forgot', {
+//     title: 'Forgot Password'
+//   });
+// };
 
 /**
  * POST /forgot
