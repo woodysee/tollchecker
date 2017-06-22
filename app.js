@@ -11,11 +11,15 @@ import cookieParser from 'cookie-parser';
 import Debug from 'debug';
 import logger from 'morgan';
 import lusca from 'lusca';
+import expressValidator from 'express-validator';
 import mongoose from 'mongoose';
 import passport from 'passport'
 // import favicon from 'serve-favicon';
 import path from 'path';
 import lessMiddleware from 'less-middleware';
+import session from 'express-session';
+const MongoStore = require('connect-mongo')(session);
+import flash from 'express-flash';
 
 import index from './routes/index';
 /**
@@ -60,14 +64,36 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
 //app.use(logger('dev'));
+
+
+app.use(cookieParser());
+app.use(lessMiddleware(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: false
 }));
 
-app.use(cookieParser());
-app.use(lessMiddleware(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(expressValidator());
+app.use(session({
+  resave: true,
+  saveUninitialized: true,
+  secret: process.env.SESSION_SECRET,
+  store: new MongoStore({
+    url: process.env.MONGODB_URI || process.env.MONGOLAB_URI,
+    autoReconnect: true,
+    clear_interval: 3600
+  })
+}))
+app.use(passport.initialize())
+app.use(passport.session())
+app.use(flash())
+
+app.use((req, res, next) => {
+  res.locals.user = req.user
+  next()
+})
 
 //Express mounting of primary routes, i.e. ([path,] callback [, callback...])
 app.use('/', index);
@@ -96,11 +122,11 @@ app.get('/auth/facebook', passport.authenticate('facebook', { scope: ['email', '
 app.get('/auth/facebook/callback', passport.authenticate('facebook', { failureRedirect: '/login' }), (req, res) => {
  res.redirect(req.session.returnTo || '/');
 });
+
 app.get('/auth/google', passport.authenticate('google', { scope: 'profile email' }));
 app.get('/auth/google/callback', passport.authenticate('google', { failureRedirect: '/login' }), (req, res) => {
  res.redirect(req.session.returnTo || '/');
 });
-
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

@@ -11,7 +11,7 @@ const OpenIDStrategy = require('passport-openid').Strategy;
 const OAuthStrategy = require('passport-oauth').OAuthStrategy;
 const OAuth2Strategy = require('passport-oauth').OAuth2Strategy;
 
-const User = require('../models/userAccount');
+const UserAccount = require('../models/userAccount');
 
 import dotenv from 'dotenv';
 dotenv.load({ path: '.env.example' });
@@ -24,7 +24,7 @@ passport.serializeUser((user, done) => {
 });
 
 passport.deserializeUser((id, done) => {
-  User.findById(id, (err, user) => {
+  UserAccount.findById(id, (err, user) => {
     done(err, user);
   });
 });
@@ -33,7 +33,7 @@ passport.deserializeUser((id, done) => {
  * Sign in using Email and Password.
  */
 passport.use(new LocalStrategy({ usernameField: 'email' }, (email, password, done) => {
-  User.findOne({ email: email.toLowerCase() }, (err, user) => {
+  UserAccount.findOne({ email: email.toLowerCase() }, (err, user) => {
     if (err) { return done(err); }
     if (!user) {
       return done(null, false, { msg: `Email ${email} not found.` });
@@ -51,11 +51,11 @@ passport.use(new LocalStrategy({ usernameField: 'email' }, (email, password, don
 /**
  * OAuth Strategy Overview (taken from Sahat's GA Hackathon Starter)
  *
- * - User is already logged in.
+ * - UserAccount is already logged in.
  *   - Check if there is an existing account with a provider id.
  *     - If there is, return an error message. (Account merging not supported)
  *     - Else link new OAuth account with currently logged-in user.
- * - User is not logged in.
+ * - UserAccount is not logged in.
  *   - Check if it's a returning user.
  *     - If returning user, sign in and we are done.
  *     - Else check if there is an existing account with user's email.
@@ -74,13 +74,13 @@ passport.use(new FacebookStrategy({
   passReqToCallback: true
 }, (req, accessToken, refreshToken, profile, done) => {
   if (req.user) {
-    User.findOne({ facebook: profile.id }, (err, existingUser) => {
+    UserAccount.findOne({ facebook: profile.id }, (err, existingUser) => {
       if (err) { return done(err); }
       if (existingUser) {
         req.flash('errors', { msg: 'There is already a Facebook account that belongs to you. Sign in with that account or delete it, then link it with your current account.' });
         done(err);
       } else {
-        User.findById(req.user.id, (err, user) => {
+        UserAccount.findById(req.user.id, (err, user) => {
           if (err) { return done(err); }
           user.facebook = profile.id;
           user.tokens.push({ kind: 'facebook', accessToken });
@@ -95,18 +95,18 @@ passport.use(new FacebookStrategy({
       }
     });
   } else {
-    User.findOne({ facebook: profile.id }, (err, existingUser) => {
+    UserAccount.findOne({ facebook: profile.id }, (err, existingUser) => {
       if (err) { return done(err); }
       if (existingUser) {
         return done(null, existingUser);
       }
-      User.findOne({ email: profile._json.email }, (err, existingEmailUser) => {
+      UserAccount.findOne({ email: profile._json.email }, (err, existingEmailUser) => {
         if (err) { return done(err); }
         if (existingEmailUser) {
           req.flash('errors', { msg: 'There is already an account using this email address. Sign in to that account and link it with Facebook manually from Account Settings.' });
           done(err);
         } else {
-          const user = new User();
+          const user = new UserAccount();
           user.email = profile._json.email;
           user.facebook = profile.id;
           user.tokens.push({ kind: 'facebook', accessToken });
@@ -133,13 +133,13 @@ passport.use(new GoogleStrategy({
   passReqToCallback: true
 }, (req, accessToken, refreshToken, profile, done) => {
   if (req.user) {
-    User.findOne({ google: profile.id }, (err, existingUser) => {
+    UserAccount.findOne({ google: profile.id }, (err, existingUser) => {
       if (err) { return done(err); }
       if (existingUser) {
         req.flash('errors', { msg: 'There is already a Google account that belongs to you. Sign in with that account or delete it, then link it with your current account.' });
         done(err);
       } else {
-        User.findById(req.user.id, (err, user) => {
+        UserAccount.findById(req.user.id, (err, user) => {
           if (err) { return done(err); }
           user.google = profile.id;
           user.tokens.push({ kind: 'google', accessToken });
@@ -154,18 +154,18 @@ passport.use(new GoogleStrategy({
       }
     });
   } else {
-    User.findOne({ google: profile.id }, (err, existingUser) => {
+    UserAccount.findOne({ google: profile.id }, (err, existingUser) => {
       if (err) { return done(err); }
       if (existingUser) {
         return done(null, existingUser);
       }
-      User.findOne({ email: profile.emails[0].value }, (err, existingEmailUser) => {
+      UserAccount.findOne({ email: profile.emails[0].value }, (err, existingEmailUser) => {
         if (err) { return done(err); }
         if (existingEmailUser) {
           req.flash('errors', { msg: 'There is already an account using this email address. Sign in to that account and link it with Google manually from Account Settings.' });
           done(err);
         } else {
-          const user = new User();
+          const user = new UserAccount();
           user.email = profile.emails[0].value;
           user.google = profile.id;
           user.tokens.push({ kind: 'google', accessToken });
