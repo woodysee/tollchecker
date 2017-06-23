@@ -43,9 +43,7 @@ function initMap() {
       //console.log(gantries)
       infoWindowContent.push(['<div class="info_content">' +
         '<h3>' + gantries[i].gantryID + '</h3>' +
-        '<h4>' + gantries[i].locationDescription + '</h4>' +
-        '<h5>From ' + 'charges.startHour[c]' + ' to ' + 'charges.endHour[c]' + '</h5><p>' +
-        'Toll: ' + 'charges.chargeAmount[c]' + '</p></div>']
+        '<h4>' + gantries[i].locationDescription + '</h4>']
       );
     };
 
