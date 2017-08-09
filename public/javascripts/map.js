@@ -12,8 +12,9 @@
 // });
 
 // Global variables
-var gantries
-var charges
+console.log("Starting javascripts/map.js");
+var gantries;
+var charges;
 
 // InitMap function
 function initMap() {
@@ -38,14 +39,14 @@ function initMap() {
 
     // Info Window Content
     var infoWindowContent = [];
-    console.log('before for loop, gantries', gantries)
+    console.log('Starting for loop for gantry markers', gantries)
     for (var i = 0; i < gantries.length; i++) {
       //console.log(gantries)
       infoWindowContent.push(['<div class="info_content">' +
         '<h3>' + gantries[i].gantryID + '</h3>' +
         '<h4>' + gantries[i].locationDescription + '</h4>' +
-        '<h5>From ' + 'charges.startHour[c]' + ' to ' + 'charges.endHour[c]' + '</h5><p>' +
-        'Toll: ' + 'charges.chargeAmount[c]' + '</p></div>']
+        '<h5>From ' + /*For loop in the charges startHour*/'charges.startHour[c]' + ' to ' + /*For loop in the charges endHour*/'charges.endHour[c]' + '</h5><p>' +
+        'Toll: ' + /*For loop in the charges chargeAmount*/'charges.chargeAmount[c]' + '</p></div>']
       );
     };
 
@@ -88,10 +89,10 @@ $(() => {
     url: '/charges',
     success: (result) => {
       charges = result
-      console.log('ALL CHARGES ARE HERE:', charges)
+      console.log('All charges:', charges)
     }
   }).done(() => {
-      console.log('ajax charges done')
+      console.log('Gotten all charges by AJAX.')
     }
   )
 })
@@ -105,8 +106,9 @@ $(() => {
       //console.log('ALL GANTRIES ARE HERE:', gantries)
     }
   }).done(() => {
-      console.log('ajax gantries done')
+      console.log('Gotten all gantries by AJAX.')
       initMap()
     }
   )
 })
+console.log("Loaded javascripts/map.js");

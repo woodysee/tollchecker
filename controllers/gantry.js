@@ -1,12 +1,13 @@
+console.log("Starting controllers/gantry.js");
 import Gantry from '../models/gantry'
 
 // get all gantries
 exports.getAll = (req, res) => {
   Gantry.find((err, gantries)=> {
     if (err) return res.json({message: 'could not find gantries because: ' + err})
-    //console.log(gantries)
+    //console.log("console.log(Method for gantries here)");
     res.render('index', {
-      gantries: gantries
+      gantries: gantries,
     })
   })
 }
@@ -38,7 +39,7 @@ exports.create = (req, res) => {
   newGantry.gantryType.zoneID = req.body.gantryType.zoneID;
 
   newGantry.save((err, gantry) => {
-    if (err) return res.json({message: 'could not save user because: ' + err})
+    if (err) return res.json({message: 'could not save gantry because: ' + err})
     res.send('gantry created')
   });
 }
@@ -70,3 +71,4 @@ exports.delete = (req, res) => {
     })
   })
 }
+console.log("Loaded controllers/gantry.js");

@@ -1,3 +1,4 @@
+console.log("Starting controllers/charges.js");
 import Charges from '../models/charges'
 
 // get all charges
@@ -5,11 +6,12 @@ exports.getAll = (req, res) => {
   Charges.find((err, charges)=> {
     if (err) return res.json({message: 'could not find charges because: ' + err})
     //console.log(charges)
+    var charges = charges.getCurrentCharges();//very impt!!
     res.render('index', {
       charges: charges
     })
   })
-}
+};
 
 exports.getAllCharges = (req, res) => {
   Charges.find((err, charges)=> {
@@ -79,3 +81,5 @@ exports.delete = (req, res) => {
     })
   })
 }
+
+console.log("Loaded controllers/charges.js");

@@ -6,21 +6,21 @@ $( document ).ready(function() {
 
 /* A Document Ready in jQuery above */
 
-// Return the name of the weekday today
-
 //Reference to all gantry objects
 var currentBlock = {
   vehicleType: "Passenger Cars/Light Goods Vehicles/Taxis",
   dayType: "Weekdays",
   gantryIDs: ["2"],
-  startHour: 7,
+  startHour: charges.startHour,
   startMins: 30,
   endHour: 7,
   endMins: 54,
   chargeAmount: 3.50
 };
 
+//Returns a string representing whether it is a weekday, Saturday, or Sunday
 function timeAndDayChecker(startHour,startMins,endHour,endMins) {
+
   function isWeekday() {
     var d = new Date();
     var dayOfWeek = new Array(7);
@@ -37,18 +37,21 @@ function timeAndDayChecker(startHour,startMins,endHour,endMins) {
     return w;
   };
 
+//Returns a number between 0 - 23 representing current hour in a 24 hour clock
   function hourIs() {
     var d = new Date();
     var h = d.getHours();
     return h;
   };
 
+//Returns a number between 0 - 59 representing current minutes in a 24 hour clock
   function MinsIs() {
     var d = new Date();
     var m = d.getMinutes();
     return m;
   };
 
+  //Checks which time block it is currently in
   function timeMatch(currentHour,currentMins,startHour,startMins,endHour,endMins) {
     if (currentHour >= startHour && startMins >= startMins && currentHour <= startHour && currentMins <= startMins) {
       return true;
@@ -57,5 +60,7 @@ function timeAndDayChecker(startHour,startMins,endHour,endMins) {
     };
   };
 
-  return timeMatch(hourIs(),MinsIs(),startHour,startMins,endHour,endMins);
+  //Outputs the current time block
+  return hourIs() + MinsIs() + startHour + startMins + endHour + endMins;
+
 };
