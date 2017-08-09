@@ -3,10 +3,5 @@ extends layout
 block content
   .row
     //- #map.col-sm-9
-    #map_wrapper.col-sm-9
+    #map_wrapper.col-sm-12
       #map_canvas.mapping
-    .col-sm-3
-      for gantry in gantries
-        ul
-          li=gantry.locationDescription
-          li=gantry.gantryID
